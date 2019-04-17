@@ -1,0 +1,2 @@
+class Homeopathie < ApplicationRecord
+end

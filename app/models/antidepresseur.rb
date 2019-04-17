@@ -1,0 +1,2 @@
+class Antidepresseur < ApplicationRecord
+end

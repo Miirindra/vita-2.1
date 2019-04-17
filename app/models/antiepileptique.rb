@@ -1,0 +1,2 @@
+class Antiepileptique < ApplicationRecord
+end

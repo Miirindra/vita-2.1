@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h1>PRODUIT</h1>
+	<h1>Admin_ID : <%= current_admin.id %> </h1>
+
+	<a  href="/admin/<%= current_admin.id %>" data-method="delete" >Log Out</a>
+
+
+	<form action="/produit" method="post" >
+
+
+
+		  	<input name="authenticity_token" type="hidden"  value="<%= form_authenticity_token %>">
+
+				  <div>
+				  	<label>Medicament</label><br>
+				  	<input type="text" name="Medicament">
+				  </div>
+
+				<div>
+					<label>Description</label><br>
+					 <textarea name="Description" ></textarea>
+				</div>
+				
+
+				 <div>
+				 	<label>Prix</label><br>
+				 	<input type="text" name="Prix">
+				 </div>
+
+	            <div>
+	            	<button type="submit" >Ajouter</button>
+	            </div>	
+
+
+    </form>
+	
+<% @produit.each do |t| %>
+	<p><%= t.medicament %></p>	
+	<p><%= t.description %></p>	
+	<p><%= t.prix %></p>	
+
+	<a href="/produit/<%= t.id %>/edit">Edit</a>
+	<a href= "/produit/<%= t.id %>" data-method="delete" data-confirm="Effacez le produit?">Effacer</a>
+	
+<%end%>
+</body>
+</html>

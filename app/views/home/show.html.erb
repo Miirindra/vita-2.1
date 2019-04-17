@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Health medical template project">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+	<link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+	<link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+	<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+	<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+	<link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.7.0/css/all.css' integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ' crossorigin='anonymous'>
+
+
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="styles/bootstrap4/popper.js"></script>
+	<script src="styles/bootstrap4/bootstrap.min.js"></script>
+	<script src="plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+	<script src="plugins/easing/easing.js"></script>
+	<script src="plugins/parallax-js-master/parallax.min.js"></script>
+	<script src="js/custom.js"></script>
+
+
+</head>
+<body>
+
+	<div class="super_container">
+
+	<!-- Menu -->
+
+	<div class="menu trans_500">
+		<div class="menu_content d-flex flex-column align-items-center justify-content-center text-center">
+			<div class="menu_close_container"><div class="menu_close"></div></div>
+			<form action="#" class="menu_search_form">
+				<input type="text" class="menu_search_input" placeholder="Search" required="required">
+				<button class="menu_search_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+			</form>
+			<ul>
+				<li class="menu_item"><a href="/">Home</a></li>
+				<li class="menu_item"><a href="#">About us</a></li>
+				<li class="menu_item"><a href="#">Services</a></li>
+				<li class="menu_item"><a href="news.html">News</a></li>
+				<li class="menu_item"><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+		<div class="menu_social">
+			<ul>
+				<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+				<li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+			</ul>
+		</div>
+	</div>
+
+	<!-- Home -->
+
+	<div class="home">
+		<div class="background_image" style="background-image:url(images/index_hero.jpg)"></div>
+
+		<!-- Header -->
+
+		<header class="header" id="header">
+			<div>
+				<div class="header_top">
+					<div class="container">
+						<div class="row">
+							<div class="col">
+								<div class="header_top_content d-flex flex-row align-items-center justify-content-start">
+									<div class="logo">
+										<a href="/"><span>PharmaSite</span></a>
+										<i class='fas fa-clinic-medical' style='font-size:48px;color:#1abc9c'></i>
+									</div>
+									<div class="header_top_extra d-flex flex-row align-items-center justify-content-start ml-auto">
+										<div class="header_top_nav">
+											<ul class="d-flex flex-row align-items-center justify-content-start">
+
+												<% unless current_user %>
+													<li><a href="/user/new">Registration</a></li>
+													<li><a href="/session/new">Login</a></li>
+													<li><a href="/admin/new">Admin</a></li>
+												<% else %>
+												     <p>USER ID : <%= current_user.id %></p>
+													 <a  href="/session/<%= current_user.id %>" data-method="delete" >Log Out</a>
+													 <a href="/admin/new">Admin</a>
+												<% end %>
+											</ul>
+										</div>
+										<div class="header_top_phone">
+											<i class="fa fa-phone" aria-hidden="true"></i>
+											<span>+261 34 48 458 68</span>
+										</div>
+									</div>
+									<div class="hamburger ml-auto"><i class="fa fa-bars" aria-hidden="true"></i></div>
+								</div>
+							</div>
+						</div>
+				</div>
+				<div class="header_nav" id="header_nav_pin">
+					<div class="header_nav_inner">
+						<div class="header_nav_container">
+							<div class="container">
+								<div class="row">
+									<div class="col">
+										<div class="header_nav_content d-flex flex-row align-items-center justify-content-start">
+											<nav class="main_nav">
+												<ul class="d-flex flex-row align-items-center justify-content-start">
+													<li class="active"><a href="index.html">Home</a></li>
+													<li><a href="about.html">About Us</a></li>
+													<li><a href="services.html">Services</a></li>
+													<li><a href="news.html">News</a></li>
+													<li><a href="contact.html">Contact</a></li>
+												</ul>
+											</nav>
+
+<!-- FORMULAIRE DE RECHERCHE -->
+
+											<div class="search_content d-flex flex-row align-items-center justify-content-end ml-auto">
+											<!--
+												<form action="#" id="search_container_form" class="search_container_form">
+													<input type="text" class="search_container_input" placeholder="Search" required="required">
+													<button class="search_container_button"><i class="fa fa-search" aria-hidden="true"></i></button>
+												</form>
+											-->
+											<%= form_tag(search_page_path, :method => "get", class: 'navbar-form navbar-left') do %>
+											  <div class="input-group">
+											    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>
+											    <div class="input-group-btn">
+											      <%= button_tag(:class => 'btn btn-info btn-lg',:name => nil, :type => 'submit') do %>
+															<i class="fa fa-search" aria-hidden="true"></i>
+														<% end %>
+											    </div>
+											  </div>
+											<% end %>
+
+											</div>
+
+<!-- FORMULAIRE DE RECHERCHE -->
+										</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+
+
+
+	<h1>page acceuil 1</h1>
+
+
+
+
+<% unless current_user %>
+	<a href="/user/new">Inscription</a>
+	<a href="/session/new">Login</a>
+	<a href="/admin/new">Admin</a>
+<% else %>
+     <p>USER ID : <%= current_user.id %></p>
+	 <a  href="/session/<%= current_user.id %>" data-method="delete" >Log Out</a>
+	 <a href="/admin/new">Admin</a>
+<% end %>
+
+
+</body>
+</html>

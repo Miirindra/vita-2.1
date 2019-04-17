@@ -1,0 +1,2 @@
+class Somnifere < ApplicationRecord
+end

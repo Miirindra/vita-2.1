@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+	<h1>EDIT</h1>
+ <p>Admin ID : <%= current_admin.id %></p>
+
+		 <%= form_tag produit_path( @m.id ) , method: :put do %>
+
+			
+		 <p> <%= text_area_tag :medicament , @m.medicament   %> </p>    
+
+		   <p><%= text_area_tag :description , @m.description %> </p>   
+
+		   <p><%= text_area_tag :prix , @m.prix   %> </p>   
+   
+
+	    <input type="submit" >
+
+	    <%end%>
+
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+class Antidiabetique < ApplicationRecord
+end

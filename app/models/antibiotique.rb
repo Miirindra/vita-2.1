@@ -1,0 +1,2 @@
+class Antibiotique < ApplicationRecord
+end

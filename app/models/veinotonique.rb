@@ -1,0 +1,2 @@
+class Veinotonique < ApplicationRecord
+end
